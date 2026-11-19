@@ -12,7 +12,7 @@ jobs:
       - nscloud-cache-tag-nix-store-cache-ubuntu-26.04-amd64
     timeout-minutes: 30
     steps:
-      - uses: AtomiCloud/actions.setup-nix@v3
+      - uses: AtomiCloud/actions.setup-nix@v4
       - name: Run the unit tier
         run: nix develop .#ci -c ./scripts/ci/vanadium.sh
 
@@ -24,6 +24,6 @@ jobs:
       - nscloud-cache-tag-nix-store-cache-ubuntu-26.04-amd64
     timeout-minutes: 30
     steps:
-      - uses: AtomiCloud/actions.setup-nix@v3
+      - uses: AtomiCloud/actions.setup-nix@v4
       - name: Install on k3d and prove warn, deny and exemption
         run: nix develop .#ci -c ./scripts/ci/vanadium-k3d.sh
